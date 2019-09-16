@@ -29,9 +29,16 @@
 class MyFirstApplication
  
   def call(env)
+    # This is the lowest level of abstraction the Rack app can handle:
+    [200, {"Context-Type" => "text/html"}, ["This Rack app is live!"]]
+
+
+=begin
     resp = Rack::Response.new
     resp.write "The \"#{self.class.name}\" class is working just fine"
     resp.finish
+=end 
+
   end
  
 end
